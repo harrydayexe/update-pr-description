@@ -1,5 +1,5 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
+import * as core from '@actions/core';
+import * as github from '@actions/github';
 
 const token = core.getInput('token', { required: true });
 const body = core.getInput('body', { required: true });
@@ -10,7 +10,7 @@ const prNum = github.context.payload.pull_request.number;
 
 const octokit = github.getOctokit(token);
 
-octokit.pulls.update({
+await octokit.rest.pulls.update({
   owner: repoOwner,
   repo: repoName,
   body: body,

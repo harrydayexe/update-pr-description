@@ -1,7 +1,8 @@
 {
   "private": true,
   "name": "update-pr-description",
-  "version": "1.0.0",
+  "version": "2.1.0",
+  "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -20,21 +21,20 @@
   },
   "homepage": "https://github.com/riskledger/update-pr-description#readme",
   "scripts": {
-    "lint": "./node_modules/eslint/bin/eslint.js --ext .js",
-    "lint:fix": "yarn run lint --fix",
-    "lint:all": "yarn run lint ./",
-    "lint:all:fix": "yarn run lint:fix ./",
+    "lint": "eslint main.js",
+    "lint:fix": "eslint main.js --fix",
     "build": "ncc build main.js --license licenses.txt"
   },
   "dependencies": {
-    "@actions/core": "1.6.0",
-    "@actions/github": "5.0.0"
+    "@actions/core": "3.0.1",
+    "@actions/github": "9.1.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "0.33.x",
-    "eslint": "8.7.x",
-    "eslint-config-prettier": "8.3.x",
-    "eslint-plugin-prettier": "4.0.x",
-    "prettier": "2.5.x"
+    "@eslint/js": "9.x",
+    "@vercel/ncc": "0.38.x",
+    "eslint": "10.2.x",
+    "eslint-config-prettier": "10.1.x",
+    "eslint-plugin-prettier": "5.5.x",
+    "prettier": "3.8.x"
   }
 }

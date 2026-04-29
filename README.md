@@ -8,7 +8,7 @@ Inside your `.github/workflows/workflow.yml` file:
 
 ```yaml
 steps:
-  - uses: riskledger/update-pr-description@dev
+  - uses: riskledger/update-pr-description@v2
     with:
       body: ${{ description }} # The text you wish to overwrite your Pull Request description with, can be a variable or a string
       token: ${{ secrets.GITHUB_TOKEN }}
